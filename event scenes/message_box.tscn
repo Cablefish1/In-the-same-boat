@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp22bo325i8lu"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_1h1gm"]
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -147.5
+offset_right = 132.5
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1h1gm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Life haven't always been kind to you. You've had to work your way from the ground up. Sure your dad gave you a small loan of a few million dollars, but besides that you've had to earn your living! By investing in oil, coal and airplane companies you now have billions in your Panama accounts. You earned them!
+
+With the recent rise in global temperatures and freak weather events those hippie scientist and even some democrats are arguing that people like you should share your wealth in the coming climate crisis. They want to take your hard earned money and use them to feed and shelter the lazy people who didn't earn enough themselves!
+
+Well that'll be over your dead body!"
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[node name="CenterButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "OK (close)"
+
+[node name="RightButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/CenterButton" to="." method="_on_center_pressed"]

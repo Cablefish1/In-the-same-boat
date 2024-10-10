@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://bemwx8l4jrqlm"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_yhm3h"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -198.0
+offset_right = 159.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_yhm3h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]Protesters has set up a protest encampment in front of your mansion!
+
+These hippies clearly don't understand the value that trickle down economics will have during a climate collapse!
+
+Furtunately you can get your private security to motivate them to leave.
+
+Your security advisors  warns you about letting the camp reach 10.000 people. At that point they might just overwhelm your defences."
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[node name="CenterButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "OK (close)"
+
+[node name="UseArmyButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "motivate protesters
+(2 security)"
+
+[node name="RightButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/CenterButton" to="." method="_on_center_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/UseArmyButton" to="." method="_on_use_army_button_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7rlqntpn3q5c"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_8xut1"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -198.0
+offset_right = 159.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_8xut1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "You've been thinking a lot about where to place your shelter. You have three options:
+
+[b]Mountain:[/b]
+- More resistant to freak weather.
+- More likely to attract attention from locals.
+- Fastest to build.
+
+[b]Pacific Island:[/b]
+- Less resistant to freak weather.
+- Cheap migrant labor.
+
+[b]Mars Shelter[/b]
+- Safest from human error.
+- Robot AIs takes lots of supervision (slow to build).
+- Gold and Supplies has added shipping costs.
+
+Where do you want to place your shelter?"
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Moutains" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Mountains"
+
+[node name="Pacific" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "Pacific"
+
+[node name="Mars" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Mars"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Moutains" to="." method="_on_moutains_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Pacific" to="." method="_on_pacific_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Mars" to="." method="_on_mars_pressed"]

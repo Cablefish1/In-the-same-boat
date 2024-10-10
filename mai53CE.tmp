@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyf8p5we33u4u"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0kj0k"]
+[ext_resource type="Script" path="res://timekeeper.gd" id="2_8lxqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqvtg"]
+bg_color = Color(0.6, 0.6, 0.611765, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kj0k")
+
+[node name="AssetPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -239.0
+offset_right = 190.0
+grow_vertical = 0
+
+[node name="Assets container" type="HBoxContainer" parent="AssetPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -238.0
+offset_right = 189.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="MoneyContainer" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="MoneyBar" type="ProgressBar" parent="AssetPanel/Assets container/MoneyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+max_value = 1000.0
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="MoneyAmount" type="Label" parent="AssetPanel/Assets container/MoneyContainer/MoneyBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="AssetPanel/Assets container/MoneyContainer"]
+layout_mode = 2
+text = "Money
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Army" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="ArmyBar" type="ProgressBar" parent="AssetPanel/Assets container/Army"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ArmyAmount" type="Label" parent="AssetPanel/Assets container/Army/ArmyBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="ArmyLabel" type="Label" parent="AssetPanel/Assets container/Army"]
+layout_mode = 2
+text = "Security
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PR" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="PRBar" type="ProgressBar" parent="AssetPanel/Assets container/PR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="PRAmount" type="Label" parent="AssetPanel/Assets container/PR/PRBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="PRLabel" type="Label" parent="AssetPanel/Assets container/PR"]
+layout_mode = 2
+text = "PR ppl
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Timekeeper" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 711.0
+offset_top = 8.0
+offset_right = 781.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="Timekeeper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "January
+2030"
+horizontal_alignment = 1
+script = ExtResource("2_8lxqh")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 130.0
+offset_right = 494.0
+offset_bottom = 346.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Standard Actions:"
+
+[node name="BuyGoldButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Buy gold (#price)"

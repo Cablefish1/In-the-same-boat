@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://faja1rgfovth"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_7euml"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -209.5
+offset_right = 179.0
+offset_bottom = 209.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_7euml")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center] The year comes to a close with some dire conclusions. Weather records have been broken across the board and catastrophies are becoming everday occurance in the news. It seems that without a doubt the worst predictions from the scientest are correct.
+
+You analyst predicts:
+Gold prices will fluctuate but will now tend to rise more than the drop.
+
+Global panic will increase at a faster pace.
+
+Food prices will go up but are predicted to remain stable throughout the year."
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[node name="CenterButton" type="Button" parent="VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "OK (close)"
+
+[node name="RightButton" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OK (close)"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/CenterButton" to="." method="_on_center_pressed"]

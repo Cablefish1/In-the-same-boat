@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccuplmd6o5oqn"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_4btu4"]
+[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_vs43h"]
+[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="3_v6e22"]
+[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="4_c187l"]
+[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_odbw8"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -242.0
+offset_right = 218.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_4btu4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]
+Your rotating fireplace set fire to some of your shelter supplies.
+
+Your construction superviser even has the audacity to criticize your decision to include it in the construction requirements. Good thing he's replaceable.
+[/center]"
+
+[node name="Motivate" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "She always had trouble with anxiety.
+
+Anxious about what you might do if she disobey!"
+text = "Motivate her to admit her claims as false.
+Cost 10 security"
+script = ExtResource("2_vs43h")
+
+[node name="PayOff" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Everybody has a price"
+text = "Buy her a new Private Jet!
+Cost 50 (C)"
+script = ExtResource("3_v6e22")
+
+[node name="Smear Campaign" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Your flight was subsidised by planting 5 trees in Africa!"
+text = "Make a positive spin on your flight!
+
+Cost 3 PR people
+"
+script = ExtResource("4_c187l")
+prppl_cost = 3
+
+[node name="Ignore" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Enveous hippies who can't even afford economy class fligths!"
+text = "DAMN
+-1 shelter progress
+-5 supply stockpile
+"
+script = ExtResource("5_odbw8")
+global_var_name = "hideout_progress"
+amount_to_change = -1
+global_var_name2 = "supply_stockpile"
+amount_to_change2 = -5
+
+[connection signal="pressed" from="VBoxContainer/Motivate" to="VBoxContainer/Motivate" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/PayOff" to="VBoxContainer/PayOff" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Smear Campaign" to="VBoxContainer/Smear Campaign" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ignore" to="VBoxContainer/Ignore" method="_on_pressed"]

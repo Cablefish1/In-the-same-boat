@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://cst4l5db1h5se"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_88f6t"]
+[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_rubrk"]
+[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_ge7dq"]
+[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="4_kcxgr"]
+[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_nf8t3"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -242.0
+offset_right = 218.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_88f6t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]You're celebrated in the woke liberal magazine Global Equality News as the biggest tax evader of the century.
+
+Personally it's a badge of pride for you. As taxation leads to socialism you're clearly just doing your part defending democracy.
+
+Sadly, not everyone sees it like that and now the politicians want to do the worst think imaginable. Regulate![/center]"
+
+[node name="Motivate" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "She always had trouble with anxiety.
+
+Anxious about what you might do if she disobey!"
+text = "Motivate her to admit her claims as false.
+Cost 10 security"
+script = ExtResource("2_rubrk")
+
+[node name="Smear Campaign" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "What about the small business owners already suffering during the climate crisis! They don't like paying taxes either!"
+text = "Distract the press
+
+-5 PR people
+"
+script = ExtResource("3_ge7dq")
+
+[node name="PayOff" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Republicans to the rescue!"
+text = "Donate to opposition candidates
+
+80 (C)"
+script = ExtResource("4_kcxgr")
+money_cost = 80
+
+[node name="Ignore" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+tooltip_text = "Oh the humanity of what's being done to you!"
+text = "IGNORE
++200 protest camp size
+- 5 (C) when liquidating
+"
+script = ExtResource("5_nf8t3")
+global_var_name = "protest_camp_size"
+amount_to_change = 200
+global_var_name2 = "liquidate_money_modifier"
+amount_to_change2 = -5
+
+[connection signal="pressed" from="VBoxContainer/Motivate" to="VBoxContainer/Motivate" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Smear Campaign" to="VBoxContainer/Smear Campaign" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/PayOff" to="VBoxContainer/PayOff" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ignore" to="VBoxContainer/Ignore" method="_on_pressed"]

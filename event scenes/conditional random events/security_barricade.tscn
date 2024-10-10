@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://yeaip3fiodho"]
+
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_lj635"]
+[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_ic1rt"]
+[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_xenmk"]
+[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="4_p2lpp"]
+[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_684wg"]
+
+[sub_resource type="Theme" id="Theme_707wo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rd07"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MessageBox" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -242.0
+offset_right = 218.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_707wo")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
+script = ExtResource("1_lj635")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center] A band of your former security people has barricaded themselves in your gold vault!
+
+They are demanding to be allowed to stay in your shelter with their families.
+[/center]"
+
+[node name="Motivate" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Send your still loyal security to deal with them
+Cost 50 security"
+script = ExtResource("2_ic1rt")
+army_cost = 50
+
+[node name="Smear Campaign" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "She always had trouble with anxiety.
+
+Anxious about what you might do if she disobey!"
+text = "Motivate her to admit her claims as false.
+Cost 10 security"
+script = ExtResource("3_xenmk")
+
+[node name="PayOff" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+tooltip_text = "Everybody has a price"
+text = "Make them an cash offer
+Cost 100 (C)"
+script = ExtResource("4_p2lpp")
+money_cost = 100
+
+[node name="Ignore" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+tooltip_text = "This may motivate more guards to be less loyal in the future"
+text = "Let them leave with the gold
+Bad stuff  happens
+"
+script = ExtResource("5_684wg")
+special_event_bad_stuff = "guard rebellion ignored"
+global_var_name = "protest_camp_size"
+amount_to_change = 500
+
+[connection signal="pressed" from="VBoxContainer/Motivate" to="VBoxContainer/Motivate" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Smear Campaign" to="VBoxContainer/Smear Campaign" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/PayOff" to="VBoxContainer/PayOff" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ignore" to="VBoxContainer/Ignore" method="_on_pressed"]

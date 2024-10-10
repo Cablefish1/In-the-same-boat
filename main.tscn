@@ -1,0 +1,435 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyf8p5we33u4u"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0kj0k"]
+[ext_resource type="Script" path="res://timekeeper.gd" id="2_8lxqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqvtg"]
+bg_color = Color(0.6, 0.6, 0.611765, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kj0k")
+
+[node name="AssetPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -249.0
+offset_right = 200.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="Assets container" type="HBoxContainer" parent="AssetPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -238.0
+offset_right = 189.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="MoneyContainer" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="MoneyBar" type="ProgressBar" parent="AssetPanel/Assets container/MoneyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "Money as meassuered in the currency crapton (C)"
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+max_value = 1000.0
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="MoneyAmount" type="Label" parent="AssetPanel/Assets container/MoneyContainer/MoneyBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="AssetPanel/Assets container/MoneyContainer"]
+layout_mode = 2
+text = "Money
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Army" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="ArmyBar" type="ProgressBar" parent="AssetPanel/Assets container/Army"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "People currently employed to keep you and your interests safe.
+
+And lift heavy objects."
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ArmyAmount" type="Label" parent="AssetPanel/Assets container/Army/ArmyBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="ArmyLabel" type="Label" parent="AssetPanel/Assets container/Army"]
+layout_mode = 2
+text = "Security
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PR" type="VBoxContainer" parent="AssetPanel/Assets container"]
+layout_mode = 2
+
+[node name="PRBar" type="ProgressBar" parent="AssetPanel/Assets container/PR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "The number of people employed to hightlight the your superior version of the truth."
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqvtg")
+step = 1.0
+value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="PRAmount" type="Label" parent="AssetPanel/Assets container/PR/PRBar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "#"
+horizontal_alignment = 1
+
+[node name="PRLabel" type="Label" parent="AssetPanel/Assets container/PR"]
+layout_mode = 2
+text = "PR ppl
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timekeeper" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 8.0
+offset_right = 781.0
+offset_bottom = 61.0
+
+[node name="Label" type="Label" parent="Timekeeper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "January
+2030"
+horizontal_alignment = 1
+script = ExtResource("2_8lxqh")
+metadata/_edit_lock_ = true
+
+[node name="StandardActionsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -266.0
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StandardActionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="StandardActionsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Available Aquisitions:"
+horizontal_alignment = 1
+
+[node name="BuyGoldButton" type="Button" parent="StandardActionsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Buy gold (#price)"
+
+[node name="BuyArmyButton" type="Button" parent="StandardActionsPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Buy Security"
+
+[node name="BuyPRppl" type="Button" parent="StandardActionsPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Buy PR Person"
+
+[node name="BuySuppliesButton" type="Button" parent="StandardActionsPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = " Buy Supplies"
+
+[node name="WinConditionPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 537.0
+offset_top = 72.0
+offset_right = 765.0
+offset_bottom = 296.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinConditionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="WinConditionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Victory progres"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinConditionPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="GoldProgressCotainer" type="VBoxContainer" parent="WinConditionPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GoldProgress" type="ProgressBar" parent="WinConditionPanel/VBoxContainer/HBoxContainer/GoldProgressCotainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="GoldProgressLabel" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/GoldProgressCotainer/GoldProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/GoldProgressCotainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "   Gold   "
+horizontal_alignment = 1
+
+[node name="SupplyProgressContainer" type="VBoxContainer" parent="WinConditionPanel/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SupplyProgress" type="ProgressBar" parent="WinConditionPanel/VBoxContainer/HBoxContainer/SupplyProgressContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="SupplyProgressLabel" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/SupplyProgressContainer/SupplyProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/SupplyProgressContainer"]
+layout_mode = 2
+text = "Supplies
+"
+
+[node name="ShelterConstruction" type="VBoxContainer" parent="WinConditionPanel/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ShelterProgress" type="ProgressBar" parent="WinConditionPanel/VBoxContainer/HBoxContainer/ShelterConstruction"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ShelterProgressLabel" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/ShelterConstruction/ShelterProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="WinConditionPanel/VBoxContainer/HBoxContainer/ShelterConstruction"]
+layout_mode = 2
+text = "Shelter"
+
+[node name="TurnEndingActions" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 334.0
+offset_right = 510.0
+offset_bottom = 557.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TurnEndingActions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TurnEndingActions/VBoxContainer"]
+layout_mode = 2
+text = "Monthly activities
+(end turn)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildShelterButton" type="Button" parent="TurnEndingActions/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Oversee shelter construction"
+
+[node name="GetMoneyButton" type="Button" parent="TurnEndingActions/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Liquidate assets"
+
+[node name="GoGolfingButton" type="Button" parent="TurnEndingActions/VBoxContainer"]
+layout_mode = 2
+text = "Go golfing"
+
+[node name="PanicPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 190.0
+offset_right = 294.0
+offset_bottom = 286.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanicPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="PanicPanel/VBoxContainer"]
+layout_mode = 2
+text = "Global Panic Level"
+horizontal_alignment = 1
+
+[node name="PanicProgress" type="ProgressBar" parent="PanicPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LobbyButton" type="Button" parent="PanicPanel/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "-10% global panic
+-1 PR ppl"
+text = "Lobby against alarmists"
+
+[node name="ProtestPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 60.0
+offset_right = 294.0
+offset_bottom = 156.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ProtestPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="ProtestPanel/VBoxContainer"]
+layout_mode = 2
+text = "Protest Encampment Size"
+horizontal_alignment = 1
+
+[node name="ProtestProgress" type="ProgressBar" parent="ProtestPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 10000.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProtestPanel/VBoxContainer/ProtestProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 10000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MotivateButton" type="Button" parent="ProtestPanel/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "-100 protesters
+-10 security"
+text = "\"Motivate\" protesters to leave"
+
+[connection signal="pressed" from="StandardActionsPanel/VBoxContainer/BuyGoldButton" to="." method="_on_buy_gold_button_pressed"]
+[connection signal="pressed" from="StandardActionsPanel/VBoxContainer/BuyArmyButton" to="." method="_on_buy_army_button_pressed"]
+[connection signal="pressed" from="StandardActionsPanel/VBoxContainer/BuyPRppl" to="." method="_on_buy_p_rppl_pressed"]
+[connection signal="pressed" from="StandardActionsPanel/VBoxContainer/BuySuppliesButton" to="." method="_on_buy_supplies_button_pressed"]
+[connection signal="pressed" from="TurnEndingActions/VBoxContainer/BuildShelterButton" to="." method="_on_build_shelter_button_pressed"]
+[connection signal="pressed" from="TurnEndingActions/VBoxContainer/GetMoneyButton" to="." method="_on_get_money_button_pressed"]
+[connection signal="pressed" from="TurnEndingActions/VBoxContainer/GoGolfingButton" to="." method="_on_go_golfing_button_pressed"]
+[connection signal="pressed" from="PanicPanel/VBoxContainer/LobbyButton" to="." method="_on_lobby_button_pressed"]
+[connection signal="pressed" from="ProtestPanel/VBoxContainer/MotivateButton" to="." method="_on_motivate_button_pressed"]
