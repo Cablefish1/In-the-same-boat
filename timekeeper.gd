@@ -35,14 +35,14 @@ func update_time():
 		Globals.gold_rise = Globals.gold_rise + 1
 		# You gain less and less money when you liquidate
 		Globals.liquidate_money_modifier = Globals.liquidate_money_modifier - 10
-		if Globals.liquidate_money_modifier <= 0:
+		if Globals.liquidate_money_modifier <= 0: #can't have negative income
 			Globals.liquidate_money_modifier = 0
 		# Panic has a potential to rise more every year
 		Globals.max_monthly_panic_gain += 2
 		# More protesters flock to your mansion
-		Globals.protest_increase_modifier += 5
+		Globals.protest_increase_modifier += 10
 		# Food prices go up by a fixed amount
-		Globals.supplies_price += 5
+		Globals.supplies_price += 10
 		# events that have conditions have the potential to be added to the pool every year
 		do_specific_year_stuff()
 	month_to_str(month)
