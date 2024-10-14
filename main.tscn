@@ -159,7 +159,6 @@ script = ExtResource("2_8lxqh")
 metadata/_edit_lock_ = true
 
 [node name="StandardActionsPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

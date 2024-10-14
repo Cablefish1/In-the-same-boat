@@ -24,9 +24,12 @@ func update_time():
 	
 	# Increase protest camp size
 	Globals.protest_camp_size = Globals.protest_camp_size + (dicebag.roll_dice(1, 10) * Globals.protest_increase_modifier)
+	
+	# Check for lost conditions
 	if Globals.panic_level >= 100:
 		main.spawn_message("res://event scenes/game_over_panic.tscn")
-
+	if Globals.protest_camp_size >= 10000:
+		main.spawn_message("res://event scenes/game_over_protest.tscn")
 	
 	if(month == 13):
 		year += 1

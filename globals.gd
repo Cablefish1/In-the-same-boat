@@ -14,7 +14,7 @@ extends Node
 @export var panic_level : int = 0
 @export var protest_camp_size : int = 0
 
-@export var gold_price : int = 10
+@export var gold_price : int = 15
 @export var gold_price_minimum : int = 10
 @export var army_price : int = 15
 @export var prppl_price : int = 30

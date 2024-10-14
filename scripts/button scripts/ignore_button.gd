@@ -54,9 +54,11 @@ func change_global_vars():
 				Globals.hideout_progress = 0 # prevent hideout progress being less than 0
 			
 		"supply_stockpile":
+			print("Supply stockpile should be going down")
 			Globals.supply_stockpile = Globals.supply_stockpile + amount_to_change
 			if Globals.supply_stockpile < 0:
 				Globals.supply_stockpile = 0 # Prevent supply stockpile going below 0
+	
 		_:
 			print("ERROR: Bad global var name")
 			check_for_more_changes()

@@ -160,13 +160,12 @@ func _on_buy_supplies_button_pressed() -> void:
 
 func _on_get_money_button_pressed() -> void:
 	Globals.money = Globals.money + dicebag.roll_dice(1,50, Globals.liquidate_money_modifier)
-	
 	advance_time()
 
 func _on_build_shelter_button_pressed() -> void:
 	Globals.hideout_progress += 1
-	check_if_won()
-	advance_time()
+	if check_if_won() == false:
+			advance_time()
 
 
 
@@ -183,7 +182,8 @@ func _on_go_golfing_button_pressed() -> void:
 func check_if_won():
 	if(Globals.gold_stockpile >= Globals.gold_to_win && Globals.supply_stockpile >= Globals.supply_to_win && Globals.hideout_progress >= Globals.hideout_complete_number):
 		spawn_message("res://event scenes/game_won.tscn")
-
+		return true
+	return false
 
 # Avoid loss condition buttons
 

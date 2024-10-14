@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxdfbgiinyrst"]
+[gd_scene load_steps=3 format=3 uid="uid://cvcmv0ssu2d4s"]
 
-[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_gaj0c"]
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_ardf3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up7wx"]
 bg_color = Color(0, 0, 0, 1)
@@ -11,14 +11,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = -225.0
-offset_right = 132.5
-offset_bottom = 225.0
+offset_left = -175.0
+offset_top = -250.0
+offset_right = 175.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_up7wx")
-script = ExtResource("1_gaj0c")
+script = ExtResource("1_ardf3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,12 +34,11 @@ size_flags_vertical = 3
 bbcode_enabled = true
 text = "[center] GAME OVER
 
-You let the global panic spiral out of control! 
-Fear leads to anger! 
-Anger leads to hate! 
-Hate leads to an angry mob storming the gates of your mansion in order to get at your precious stockpiled food and gold.
+You let the protest camp reach a critical size. They link arms and form a line that extends all round your mansion grounds. Your security is powerless as they prevent access to your private hanger, press room and golf courses!
 
-With no assets to speak of left you're left to fend for yourself during the ever escalating climate catastrophes like the common rabble! It's the end for you and your dynasty!"
+You have no choice but to accept their demands. They confiscate your assets and leave you with a pension representing the wages of your lowest ranking employees.
+
+With nothings left to speak of you're doomed to fend for yourself during the ever escalating climate catastrophes like the common rabble! It's the end for you and your dynasty!"
 
 [node name="Buttons" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
