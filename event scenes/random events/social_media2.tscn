@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnllhf15viqv0"]
+[gd_scene load_steps=8 format=3 uid="uid://cv11sl6rh42ss"]
 
-[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_q8sp0"]
-[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_cx1le"]
-[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_1diop"]
-[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="4_2b1q4"]
-[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_dsfvs"]
+[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_gmu8p"]
+[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_p6y5o"]
+[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="3_tm5qm"]
+[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="4_0oin2"]
+[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_sf0op"]
 
 [sub_resource type="Theme" id="Theme_707wo"]
 
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_707wo")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4rd07")
-script = ExtResource("1_q8sp0")
+script = ExtResource("1_gmu8p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,9 +39,9 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
-text = "[center]The press got wind of you taking your private jet to buy donuts last week. Some liberal woke commentators call it irresponsible. They don't even consider that the best ones are in Berlin and you need them when you're stressed!
+text = "[center]Members of the press has read your social media posts.
 
-
+[Tweet: \"Should i share my wealth with low-income-households? I will abide by the results of this poll\".]
 [/center]"
 
 [node name="Motivate" type="Button" parent="VBoxContainer"]
@@ -54,7 +54,7 @@ tooltip_text = "She always had trouble with anxiety.
 Anxious about what you might do if she disobey!"
 text = "Motivate her to admit her claims as false.
 Cost 10 security"
-script = ExtResource("2_cx1le")
+script = ExtResource("2_p6y5o")
 
 [node name="PayOff" type="Button" parent="VBoxContainer"]
 visible = false
@@ -64,29 +64,29 @@ size_flags_vertical = 8
 tooltip_text = "Everybody has a price"
 text = "Buy her a new Private Jet!
 Cost 50 (C)"
-script = ExtResource("4_2b1q4")
+script = ExtResource("3_tm5qm")
 
 [node name="Smear Campaign" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
-tooltip_text = "Your flight was subsidised by planting 5 trees in Africa!"
-text = "Make a positive spin on your flight!
+tooltip_text = "Clearly that poll was only meant for premium backers of my heritage foundation."
+text = "Invent positive context
 
-Cost 3 PR people
+Cost 2 PR people
 "
-script = ExtResource("3_1diop")
-prppl_cost = 3
+script = ExtResource("4_0oin2")
+prppl_cost = 2
 
 [node name="Ignore" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 tooltip_text = "Enveous hippies who can't even afford economy class fligths!"
 text = "IGNORE
-+400 protest camp size
++500 protest camp size
 "
-script = ExtResource("5_dsfvs")
+script = ExtResource("5_sf0op")
 global_var_name = "protest_camp_size"
-amount_to_change = 400
+amount_to_change = 500
 
 [connection signal="pressed" from="VBoxContainer/Motivate" to="VBoxContainer/Motivate" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/PayOff" to="VBoxContainer/PayOff" method="_on_pressed"]

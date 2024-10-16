@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv2s2mwregs2o"]
+[gd_scene load_steps=3 format=3 uid="uid://bv2s2mwregs2o"]
 
 [ext_resource type="Script" path="res://scripts/message_box.gd" id="1_ev27i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbc15"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="MessageBox" type="Panel"]
 anchors_preset = 8
@@ -14,6 +17,7 @@ offset_right = 132.5
 offset_bottom = 147.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dbc15")
 script = ExtResource("1_ev27i")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

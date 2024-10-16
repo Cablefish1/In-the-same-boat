@@ -76,7 +76,8 @@ func update_ui():
 	pr_amount_label.set_text(str(Globals.pr_ppl))
 	
 	#Update action panel
-	$StandardActionsPanel/VBoxContainer/BuyGoldButton.set_text("Buy gold bar\n"+str(Globals.gold_price)+" (C)")
+	$StandardActionsPanel/VBoxContainer/HBoxContainer/BuyGoldButton.set_text("Buy gold \n"+str(Globals.gold_price)+" (C)")
+	$StandardActionsPanel/VBoxContainer/HBoxContainer/SellGoldButton.set_text("Sell \n"+str(Globals.gold_price - 5)+" (C)")
 	$StandardActionsPanel/VBoxContainer/BuyArmyButton.set_text("Buy private security\n"+str(Globals.army_price)+" (C)")
 	$StandardActionsPanel/VBoxContainer/BuyPRppl.set_text("Buy PR people\n"+str(Globals.prppl_price)+" (C)")
 	$StandardActionsPanel/VBoxContainer/BuySuppliesButton.set_text("Buy supplies\n"+str(Globals.supplies_price)+" (C)")
@@ -121,8 +122,16 @@ func _on_buy_gold_button_pressed() -> void:
 	Globals.gold_stockpile = Globals.gold_stockpile + 1
 	check_if_won()
 	update_ui()
-	
-	
+
+# Sell Gold Button
+
+func _on_sell_gold_button_pressed() -> void:
+	if Globals.gold_stockpile <= 0:
+		spawn_message("res://event scenes/no_gold_to_sell.tscn")
+		return
+	Globals.money = Globals.money + (Globals.gold_price - 5)
+	Globals.gold_stockpile -= 1
+	update_ui()
 
 func _on_buy_army_button_pressed() -> void:
 	if Globals.army_price > Globals.money:
