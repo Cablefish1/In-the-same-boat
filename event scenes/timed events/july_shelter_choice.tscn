@@ -60,19 +60,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Mountains"
+text = "Mountains
+(easy mode)"
 
 [node name="Pacific" type="Button" parent="VBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "Pacific"
+text = "Pacific
+(medium)"
 
 [node name="Mars" type="Button" parent="VBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Mars"
+text = "Mars
+(hard mode)"
 
 [connection signal="pressed" from="VBoxContainer/Buttons/Moutains" to="." method="_on_moutains_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Pacific" to="." method="_on_pacific_pressed"]

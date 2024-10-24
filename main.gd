@@ -97,6 +97,8 @@ func update_ui():
 	#update protest camp size
 	$ProtestPanel/VBoxContainer/ProtestProgress.value = Globals.protest_camp_size
 	$ProtestPanel/VBoxContainer/ProtestProgress/Label.set_text(str(Globals.protest_camp_size)+"/10000")
+	#update liquidate tooltip
+	$TurnEndingActions/VBoxContainer/GetMoneyButton.set_tooltip_text("Liberate cash from your firms \nAmmount: 1-30 + "+str(Globals.liquidate_money_modifier))
 
 func disable_all_buttons():
 	var all_buttons : Array = find_children("*","Button")
@@ -168,7 +170,7 @@ func _on_buy_supplies_button_pressed() -> void:
 
 
 func _on_get_money_button_pressed() -> void:
-	Globals.money = Globals.money + dicebag.roll_dice(1,50, Globals.liquidate_money_modifier)
+	Globals.money = Globals.money + dicebag.roll_dice(1,30, Globals.liquidate_money_modifier)
 	advance_time()
 
 func _on_build_shelter_button_pressed() -> void:

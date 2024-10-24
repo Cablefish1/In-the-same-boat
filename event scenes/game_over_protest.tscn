@@ -71,5 +71,5 @@ size_flags_vertical = 8
 text = "OK (close)"
 
 [connection signal="pressed" from="VBoxContainer/Buttons/CenterButton" to="." method="_on_center_pressed"]
-[connection signal="pressed" from="VBoxContainer/Buttons/Restart game" to="." method="_on_restart_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Restart game" to="." method="_on_center_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Restart game" to="." method="_on_restart_game_pressed"]

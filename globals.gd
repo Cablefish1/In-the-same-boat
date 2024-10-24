@@ -35,7 +35,7 @@ extends Node
 
 # Mechanics variables
 var gold_rise : int = 3
-var liquidate_money_modifier : int = 50
+var liquidate_money_modifier : int = 40
 var max_monthly_panic_gain : int = 4
 var protest_increase_modifier : int = 10
 
