@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bp22bo325i8lu"]
 
-[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_1h1gm"]
+[ext_resource type="Script" uid="uid://bpd2ucas5qmaw" path="res://scripts/message_box.gd" id="1_1h1gm"]
 
 [node name="MessageBox" type="Panel"]
 anchors_preset = 8

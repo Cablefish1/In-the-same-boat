@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyf8p5we33u4u"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_0kj0k"]
-[ext_resource type="Script" path="res://timekeeper.gd" id="2_8lxqh"]
+[ext_resource type="Script" uid="uid://cxj3hd6arnpho" path="res://main.gd" id="1_0kj0k"]
+[ext_resource type="Script" uid="uid://cxbt16pl0evxa" path="res://timekeeper.gd" id="2_8lxqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqvtg"]
 bg_color = Color(0.6, 0.6, 0.611765, 1)

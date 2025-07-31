@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cst4l5db1h5se"]
 
-[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_88f6t"]
-[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_rubrk"]
-[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_ge7dq"]
-[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="4_kcxgr"]
-[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_nf8t3"]
+[ext_resource type="Script" uid="uid://bpd2ucas5qmaw" path="res://scripts/message_box.gd" id="1_88f6t"]
+[ext_resource type="Script" uid="uid://bkwtwbxoans8l" path="res://scripts/button scripts/motivate_button.gd" id="2_rubrk"]
+[ext_resource type="Script" uid="uid://bwktg7pl486sk" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_ge7dq"]
+[ext_resource type="Script" uid="uid://r7lqg6limawk" path="res://scripts/button scripts/pay_off_money.gd" id="4_kcxgr"]
+[ext_resource type="Script" uid="uid://c406xdiykpdpa" path="res://scripts/button scripts/ignore_button.gd" id="5_nf8t3"]
 
 [sub_resource type="Theme" id="Theme_707wo"]
 

@@ -1,0 +1,58 @@
+{
+	"categories": [
+		{
+			"uuid": "8e890fb7-1e11-4f34-b358-ec19fddcacbc",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "691df5aa-279d-4ce1-ad19-cfb440859415",
+			"title": "Todo",
+			"tasks": [
+				"34a33e94-d03b-4ed8-a2d0-eb52d3a26ced",
+				"564d814a-c553-4b90-bb67-cbb1ca5177fd"
+			]
+		},
+		{
+			"uuid": "6b50a5a1-7321-49ab-b375-73f8bfb448bc",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "89ef4c7a-f30f-4933-9b9f-50b714e7a394",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "34a33e94-d03b-4ed8-a2d0-eb52d3a26ced",
+			"title": "Bug: PR people when getting rid of protesters.",
+			"description": "",
+			"category": "8e890fb7-1e11-4f34-b358-ec19fddcacbc",
+			"steps": []
+		},
+		{
+			"uuid": "564d814a-c553-4b90-bb67-cbb1ca5177fd",
+			"title": "More events! Way more events! Especially mars events!",
+			"description": "",
+			"category": "8e890fb7-1e11-4f34-b358-ec19fddcacbc",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"691df5aa-279d-4ce1-ad19-cfb440859415"
+			],
+			[
+				"6b50a5a1-7321-49ab-b375-73f8bfb448bc"
+			],
+			[
+				"89ef4c7a-f30f-4933-9b9f-50b714e7a394"
+			]
+		]
+	}
+}

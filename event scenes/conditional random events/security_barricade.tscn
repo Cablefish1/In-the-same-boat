@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://yeaip3fiodho"]
 
-[ext_resource type="Script" path="res://scripts/message_box.gd" id="1_lj635"]
-[ext_resource type="Script" path="res://scripts/button scripts/motivate_button.gd" id="2_ic1rt"]
-[ext_resource type="Script" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_xenmk"]
-[ext_resource type="Script" path="res://scripts/button scripts/pay_off_money.gd" id="4_p2lpp"]
-[ext_resource type="Script" path="res://scripts/button scripts/ignore_button.gd" id="5_684wg"]
+[ext_resource type="Script" uid="uid://bpd2ucas5qmaw" path="res://scripts/message_box.gd" id="1_lj635"]
+[ext_resource type="Script" uid="uid://bkwtwbxoans8l" path="res://scripts/button scripts/motivate_button.gd" id="2_ic1rt"]
+[ext_resource type="Script" uid="uid://bwktg7pl486sk" path="res://scripts/button scripts/pr_cost_buttons.gd" id="3_xenmk"]
+[ext_resource type="Script" uid="uid://r7lqg6limawk" path="res://scripts/button scripts/pay_off_money.gd" id="4_p2lpp"]
+[ext_resource type="Script" uid="uid://c406xdiykpdpa" path="res://scripts/button scripts/ignore_button.gd" id="5_684wg"]
 
 [sub_resource type="Theme" id="Theme_707wo"]
 
@@ -83,7 +83,6 @@ text = "Let them leave with the gold
 Bad stuff  happens
 "
 script = ExtResource("5_684wg")
-special_event_bad_stuff = "guard rebellion ignored"
 global_var_name = "protest_camp_size"
 amount_to_change = 500
 
